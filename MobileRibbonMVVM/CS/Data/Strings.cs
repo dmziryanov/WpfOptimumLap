@@ -19,8 +19,10 @@ namespace OptimumLap
         Insert,
         Layout,
         Review,
-        View,  
-          
+        View,
+        Design,
+        Simulation,
+        Analisys,
         Font,        
         FontFormatting,   
         Bold,

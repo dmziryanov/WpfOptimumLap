@@ -10,7 +10,7 @@
         Icon="..\Images\OptimumLap_256x256.ico"
         WindowState="Maximized"
         controls:VisualStyleManager.VisualStyle="Office2016Colorful"
-        Title="Mobile Ribbon MVVM Sample"
+        Title="Optimum Lap"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         TextOptions.TextFormattingMode="Display" UseLayoutRounding="True"
         ResizeMode="CanResizeWithGrip">

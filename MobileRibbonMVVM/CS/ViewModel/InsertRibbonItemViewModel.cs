@@ -7,7 +7,7 @@ namespace OptimumLap.ViewModel
     {
         public InsertRibbonItemViewModel()
         {
-            Header = Strings.Current.GetString(StringId.Insert);
+            Header = Strings.Current.GetString(StringId.Design);
             IsSelected = false;
 
         

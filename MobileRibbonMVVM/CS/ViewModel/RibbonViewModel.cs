@@ -16,8 +16,7 @@ namespace OptimumLap.ViewModel
                 (Home = new HomeRibbonItemViewModel()),
                 (Insert = new InsertRibbonItemViewModel()),
                 (Layout = new LayoutRibbonItemViewModel()),
-                (Review  = new ReviewRibbonItemViewModel()),
-                (View  = new ViewRibbonItemViewModel())
+                (Review  = new ReviewRibbonItemViewModel())
             };
         }
 
@@ -73,7 +72,7 @@ namespace OptimumLap.ViewModel
     {
         public LayoutRibbonItemViewModel()
         {
-            Header = Strings.Current.GetString(StringId.Layout);
+            Header = Strings.Current.GetString(StringId.Simulation);
         }
     }
 
@@ -81,7 +80,7 @@ namespace OptimumLap.ViewModel
     {
         public ReviewRibbonItemViewModel()
         {
-            Header = Strings.Current.GetString(StringId.Review);
+            Header = Strings.Current.GetString(StringId.Analisys);
         }
     }
  }

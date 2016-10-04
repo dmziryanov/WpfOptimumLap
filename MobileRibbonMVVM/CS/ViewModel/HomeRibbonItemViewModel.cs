@@ -21,7 +21,7 @@ namespace OptimumLap.ViewModel
         public HomeRibbonItemViewModel()
         {
             IsSelected = true;
-            Header = Strings.Current.GetString(StringId.Home);
+            Header = Strings.Current.GetString(StringId.File);
             Height = 89;
 
             BarView = new BarViewModel
