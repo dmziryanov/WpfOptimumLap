@@ -1,0 +1,60 @@
+﻿<ResourceDictionary x:Class="MobileRibbonMVVMSample.Resources.ParagraphStyleResources" 
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MobileRibbonMVVMSample">
+    
+    <local:ParagraphStyle x:Key="Normal" StyleName="Normal" SortOrder="1" TargetType="Paragraph">
+        <Setter Property="TextElement.Foreground" Value="Black" />
+        <Setter Property="TextElement.FontWeight" Value="Normal" />
+        <Setter Property="Inline.FontFamily" Value="Calibri" />
+        <Setter Property="Inline.FontSize" Value="14" />
+        <Setter Property="Paragraph.Margin" Value="0,0,0,6" />
+        <Setter Property="Paragraph.TextAlignment" Value="Left" />
+        <Setter Property="Block.LineStackingStrategy" Value="BlockLineHeight" />
+    </local:ParagraphStyle>
+
+    <local:ParagraphStyle x:Key="NoSpacing'" StyleName="No Spacing" SortOrder="2" TargetType="Paragraph" BasedOn="{StaticResource Normal}">
+        <Setter Property="Block.LineHeight" Value="1" />
+    </local:ParagraphStyle>
+
+    <local:ParagraphStyle x:Key="Heading1" StyleName="Heading 1" SortOrder="3" TargetType="Paragraph" BasedOn="{StaticResource Normal}">
+        <Setter Property="Inline.FontFamily" Value="Calibri Light" />
+        <Setter Property="Inline.FontSize" Value="21"/>
+        <Setter Property="Paragraph.Margin" Value="0,18,0,6" />
+        <Setter Property="Inline.Foreground" Value="Blue" />
+    </local:ParagraphStyle>
+
+    <local:ParagraphStyle x:Key="Heading2" StyleName="Heading 2" SortOrder="4" TargetType="Paragraph" BasedOn="{StaticResource Normal}">
+        <Setter Property="Inline.FontFamily" Value="Calibri Light" />
+        <Setter Property="Inline.FontSize" Value="18"/>
+        <Setter Property="Inline.FontWeight" Value="Bold"/>
+        <Setter Property="Paragraph.Margin" Value="0,12,0,6" />
+        <Setter Property="Inline.Foreground" Value="Blue" />
+    </local:ParagraphStyle>
+
+    <local:ParagraphStyle x:Key="Heading3" StyleName="Heading 3" SortOrder="5" TargetType="Paragraph" BasedOn="{StaticResource Normal}">
+        <Setter Property="Inline.FontFamily" Value="Calibri Light" />
+        <Setter Property="Inline.FontSize" Value="15"/>
+        <Setter Property="Inline.FontStyle" Value="Italic"/>
+        <Setter Property="Paragraph.Margin" Value="0,6,0,6" />
+        <Setter Property="Inline.Foreground" Value="DarkBlue" />
+    </local:ParagraphStyle>
+
+    <local:ParagraphStyle x:Key="Heading4" StyleName="Heading 4" SortOrder="6" TargetType="Paragraph" BasedOn="{StaticResource Normal}">
+        <Setter Property="Inline.FontFamily" Value="Calibri Light" />
+        <Setter Property="Paragraph.Margin" Value="0,6,0,6" />
+        <Setter Property="Inline.Foreground" Value="LightBlue" />
+    </local:ParagraphStyle>
+
+    <local:ParagraphStyle x:Key="Title" StyleName="Title" SortOrder="7" TargetType="Paragraph" BasedOn="{StaticResource Normal}">
+        <Setter Property="Inline.FontFamily" Value="Calibri Light" />
+        <Setter Property="Inline.FontSize" Value="28"/>        
+        <Setter Property="Inline.TextDecorations" Value="Underline" />
+        <Setter Property="Paragraph.Margin" Value="0,21,0,6" />
+    </local:ParagraphStyle>
+
+    <local:ParagraphStyle x:Key="Subtitle" StyleName="Subtitle" SortOrder="8" TargetType="Paragraph" BasedOn="{StaticResource Normal}">
+        <Setter Property="Inline.FontStretch" Value="ExtraExpanded" />
+    </local:ParagraphStyle>
+
+</ResourceDictionary>

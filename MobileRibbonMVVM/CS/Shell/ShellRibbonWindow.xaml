@@ -1,0 +1,101 @@
+﻿<dc:RibbonWindow x:Class="OptimumLap.ShellRibbonWindow"
+	    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OptimumLap"
+        xmlns:controls="clr-namespace:DevComponents.WPF.Controls;assembly=DevComponents.WPF.Controls"
+        xmlns:dc="clr-namespace:DevComponents.WpfRibbon;assembly=DevComponents.WpfRibbon"                     
+        mc:Ignorable="d" 
+        MinHeight="400" Height="700" MinWidth="380" Width="800"
+        Icon="..\Images\OptimumLap_256x256.ico"
+        WindowState="Maximized"
+        controls:VisualStyleManager.VisualStyle="Office2016Colorful"
+        Title="Mobile Ribbon MVVM Sample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        TextOptions.TextFormattingMode="Display" UseLayoutRounding="True"
+        ResizeMode="CanResizeWithGrip">
+    <Window.DataContext>
+        <local:ShellViewModel />
+    </Window.DataContext>
+
+
+    <Window.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="../Resources/BackstageResources.xaml" />
+                    <ResourceDictionary Source="../Resources/SettingsResources.xaml" />
+                    <ResourceDictionary Source="../Resources/RibbonResources.xaml" />
+                    <ResourceDictionary Source="../Resources/RibbonWindow.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+
+
+
+        </Window.Resources>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+
+
+            <dc:Ribbon Grid.Row="1" VisualStyle="Office2016" ItemsSource="{Binding Ribbon.RibbonItems}">
+                <dc:Ribbon.QuickAccessToolbar>
+                    <dc:Qat>
+                        <dc:ButtonDropDown ImageSource="images/Save.png" PartVisibility="ImageOnly" dc:Ribbon.KeyTip="1" Command="ApplicationCommands.Save" />
+                        <dc:ButtonDropDown ImageSource="images/NewDocument.png" PartVisibility="ImageOnly" dc:Ribbon.KeyTip="2" Command="ApplicationCommands.New" />
+                        <dc:QatCustomizeButton />
+                    </dc:Qat>
+                </dc:Ribbon.QuickAccessToolbar>
+            </dc:Ribbon>
+            <!--
+
+        <dc:Ribbon DockPanel.Dock="Top"  Grid.Row="1" Name="AppRibbon" VisualStyle="Office2016">
+            ~1~Define Application Menu@1@
+            
+
+            ~1~ Define Quick Access Toolbar@1@
+            <dc:Ribbon.QuickAccessToolbar>
+                <dc:Qat>
+                    <dc:ButtonDropDown ImageSource="images/Save.png" PartVisibility="ImageOnly" dc:Ribbon.KeyTip="1" Command="ApplicationCommands.Save" />
+                    <dc:ButtonDropDown ImageSource="images/NewDocument.png" PartVisibility="ImageOnly" dc:Ribbon.KeyTip="2" Command="ApplicationCommands.New" />
+                    <dc:QatCustomizeButton />
+                </dc:Qat>
+            </dc:Ribbon.QuickAccessToolbar>
+
+            ~1~ Defined Contextual Groups @1@
+            <dc:Ribbon.ContextGroups>
+                <dc:ContextGroup Name="cgGroup1" StockColor="Orange" FontSize="7.5pt">
+                    Context Group
+                </dc:ContextGroup>
+            </dc:Ribbon.ContextGroups>
+
+            <dc:RibbonTab Header="{Binding Ribbon.RibbonItems[0].Header}" dc:Ribbon.KeyTip="H">
+                <dc:RibbonBarPanel Height="{Binding Ribbon.RibbonItems[0].Height}">
+                    <dc:RibbonBar Header="Vehicle" ItemsSource="{Binding Ribbon.RibbonItems[0].Items}">
+                    </dc:RibbonBar>
+                    <dc:RibbonBar ItemsSource="{Binding Ribbon.RibbonItems[1].Items}">
+                    </dc:RibbonBar>
+                </dc:RibbonBarPanel>
+            </dc:RibbonTab>
+
+            <dc:RibbonTab Header="{Binding Ribbon.RibbonItems[2].Header}" dc:Ribbon.KeyTip="H">
+                <dc:RibbonBarPanel Height="{Binding Ribbon.RibbonItems[2].Height}">
+                    <dc:RibbonBar Header="Vehicle" ItemsSource="{Binding Ribbon.RibbonItems[2].Items}">
+                    </dc:RibbonBar>
+                    <dc:RibbonBar ItemsSource="{Binding Ribbon.RibbonItems[3].Items}">
+                    </dc:RibbonBar>
+                </dc:RibbonBarPanel>
+            </dc:RibbonTab>
+
+
+
+        </dc:Ribbon>
+-->
+
+
+        </Grid>
+
+    </dc:RibbonWindow>

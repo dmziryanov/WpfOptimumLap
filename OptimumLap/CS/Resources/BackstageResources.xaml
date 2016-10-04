@@ -1,0 +1,60 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewModel="clr-namespace:MobileRibbonMVVMSample.ViewModel"
+    xmlns:mobile="clr-namespace:DevComponents.WPF.Mobile;assembly=DevComponents.WPF.Mobile">
+
+    <DataTemplate DataType="{x:Type viewModel:BackstageItemViewModel}">
+        <mobile:BackstageItem Header="{Binding Header}" ClosesBackstage="{Binding ClosesBackstage}"
+                              IsSelectable="{Binding IsSelectable}" IsSelected="{Binding IsSelected, Mode=TwoWay}"
+                              Command="{Binding Command}" CommandParameter="{Binding CommandParameter}" />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:CreateNewBackstageItemViewModel}">
+        <mobile:BackstageItem Header="{Binding Header}" IsSelected="{Binding IsSelected, Mode=TwoWay}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <mobile:RibbonButton HorizontalAlignment="Right" MinHeight="0" Padding="12,7" FontSize="18" Content="Steve McQueen" FontWeight="Normal"/>
+                <StackPanel Grid.Row="1" Margin="0,10,0,0" VerticalAlignment="Top" Orientation="Horizontal">
+                    <TextBlock Margin="0,0,25,0" Text="New" FontSize="30" FontWeight="ExtraLight" />
+                    <mobile:RibbonComboBox TabIndex="0" Width="200" SelectedIndex="0" VerticalAlignment="Center">
+                        <mobile:RibbonComboBoxItem Content="OneDrive - Personal" />
+                        <mobile:RibbonComboBoxItem Content="OneDrive - Documents" />
+                        <mobile:RibbonComboBoxItem Content="This PC - Documents" />
+                        <mobile:RibbonComboBoxItem Content="Select a Different Location" />
+                    </mobile:RibbonComboBox>
+                </StackPanel>
+            </Grid>
+        </mobile:BackstageItem>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:OpenFileBackstageItemViewModel}">
+        <mobile:BackstageItem Header="{Binding Header}" IsSelected="{Binding IsSelected, Mode=TwoWay}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <mobile:RibbonButton HorizontalAlignment="Right" MinHeight="0" Padding="12,7" FontSize="18" Content="Steve McQueen" FontWeight="Normal"/>
+                <StackPanel Grid.Row="1" Margin="0,10,0,0" VerticalAlignment="Top" Orientation="Horizontal">
+                    <TextBlock Margin="0,0,30,0" VerticalAlignment="Center" Text="Open" FontSize="30" FontWeight="ExtraLight" />
+                    <mobile:RibbonButton TabIndex="0" MinHeight="0" VerticalAlignment="Center" FontSize="17" FontWeight="Normal"
+                                         BorderThickness="1" BorderBrush="{DynamicResource {x:Static mobile:MobileTheme.HighlightBrushKey}}"
+                                         Content="{Binding BrowseText}" Command="{Binding BrowseCommand}"/>
+                </StackPanel>
+            </Grid>
+        </mobile:BackstageItem>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:BackstageViewModel}">
+        <mobile:Backstage IsOpen="{Binding IsOpen, Mode=TwoWay}" ItemsSource="{Binding Items}" />
+    </DataTemplate>
+
+</ResourceDictionary>
+
+
+

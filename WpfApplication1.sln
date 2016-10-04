@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RibbonMVVMSample", "MobileRibbonMVVM\CS\RibbonMVVMSample.csproj", "{46671F21-0CE8-4C2B-9D5F-A82C11074304}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RibbonFormCode", "..\..\..\DotNetBar for WPF Samples\RibbonFormCode\CS\RibbonFormCode.csproj", "{1063ECE1-EE4C-4AFB-861A-184434C852D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileRibbonSample", "..\..\..\DotNetBar for WPF Samples\MobileRibbon\CS\MobileRibbonSample.csproj", "{74060860-D8F9-43E1-97F7-E70FCDAC31F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RibbonPad", "..\..\..\DotNetBar for WPF Samples\RibbonPad\CS\RibbonPad.csproj", "{FD3E4E08-B7BF-4BA7-9F78-421BDAA6F57A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileRibbonMVVMSample", "..\..\..\DotNetBar for WPF Samples\MobileRibbonMVVM\CS\MobileRibbonMVVMSample.csproj", "{3B52C200-F296-4D22-BA0F-6A377CC6B1AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDemoLap", "WpfDemoLap\WpfDemoLap.csproj", "{426DCAF2-2727-4C5F-BEDB-39C473335ECE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46671F21-0CE8-4C2B-9D5F-A82C11074304}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46671F21-0CE8-4C2B-9D5F-A82C11074304}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46671F21-0CE8-4C2B-9D5F-A82C11074304}.Debug|x86.ActiveCfg = Debug|x86
+		{46671F21-0CE8-4C2B-9D5F-A82C11074304}.Debug|x86.Build.0 = Debug|x86
+		{46671F21-0CE8-4C2B-9D5F-A82C11074304}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46671F21-0CE8-4C2B-9D5F-A82C11074304}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46671F21-0CE8-4C2B-9D5F-A82C11074304}.Release|x86.ActiveCfg = Release|x86
+		{46671F21-0CE8-4C2B-9D5F-A82C11074304}.Release|x86.Build.0 = Release|x86
+		{1063ECE1-EE4C-4AFB-861A-184434C852D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1063ECE1-EE4C-4AFB-861A-184434C852D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1063ECE1-EE4C-4AFB-861A-184434C852D5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1063ECE1-EE4C-4AFB-861A-184434C852D5}.Debug|x86.Build.0 = Debug|Any CPU
+		{1063ECE1-EE4C-4AFB-861A-184434C852D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1063ECE1-EE4C-4AFB-861A-184434C852D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1063ECE1-EE4C-4AFB-861A-184434C852D5}.Release|x86.ActiveCfg = Release|Any CPU
+		{1063ECE1-EE4C-4AFB-861A-184434C852D5}.Release|x86.Build.0 = Release|Any CPU
+		{74060860-D8F9-43E1-97F7-E70FCDAC31F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74060860-D8F9-43E1-97F7-E70FCDAC31F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74060860-D8F9-43E1-97F7-E70FCDAC31F2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{74060860-D8F9-43E1-97F7-E70FCDAC31F2}.Debug|x86.Build.0 = Debug|Any CPU
+		{74060860-D8F9-43E1-97F7-E70FCDAC31F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74060860-D8F9-43E1-97F7-E70FCDAC31F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74060860-D8F9-43E1-97F7-E70FCDAC31F2}.Release|x86.ActiveCfg = Release|Any CPU
+		{74060860-D8F9-43E1-97F7-E70FCDAC31F2}.Release|x86.Build.0 = Release|Any CPU
+		{FD3E4E08-B7BF-4BA7-9F78-421BDAA6F57A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD3E4E08-B7BF-4BA7-9F78-421BDAA6F57A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD3E4E08-B7BF-4BA7-9F78-421BDAA6F57A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FD3E4E08-B7BF-4BA7-9F78-421BDAA6F57A}.Debug|x86.Build.0 = Debug|Any CPU
+		{FD3E4E08-B7BF-4BA7-9F78-421BDAA6F57A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD3E4E08-B7BF-4BA7-9F78-421BDAA6F57A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD3E4E08-B7BF-4BA7-9F78-421BDAA6F57A}.Release|x86.ActiveCfg = Release|Any CPU
+		{FD3E4E08-B7BF-4BA7-9F78-421BDAA6F57A}.Release|x86.Build.0 = Release|Any CPU
+		{3B52C200-F296-4D22-BA0F-6A377CC6B1AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B52C200-F296-4D22-BA0F-6A377CC6B1AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B52C200-F296-4D22-BA0F-6A377CC6B1AE}.Debug|x86.ActiveCfg = Debug|x86
+		{3B52C200-F296-4D22-BA0F-6A377CC6B1AE}.Debug|x86.Build.0 = Debug|x86
+		{3B52C200-F296-4D22-BA0F-6A377CC6B1AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B52C200-F296-4D22-BA0F-6A377CC6B1AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B52C200-F296-4D22-BA0F-6A377CC6B1AE}.Release|x86.ActiveCfg = Release|x86
+		{3B52C200-F296-4D22-BA0F-6A377CC6B1AE}.Release|x86.Build.0 = Release|x86
+		{426DCAF2-2727-4C5F-BEDB-39C473335ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{426DCAF2-2727-4C5F-BEDB-39C473335ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{426DCAF2-2727-4C5F-BEDB-39C473335ECE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{426DCAF2-2727-4C5F-BEDB-39C473335ECE}.Debug|x86.Build.0 = Debug|Any CPU
+		{426DCAF2-2727-4C5F-BEDB-39C473335ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{426DCAF2-2727-4C5F-BEDB-39C473335ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{426DCAF2-2727-4C5F-BEDB-39C473335ECE}.Release|x86.ActiveCfg = Release|Any CPU
+		{426DCAF2-2727-4C5F-BEDB-39C473335ECE}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal

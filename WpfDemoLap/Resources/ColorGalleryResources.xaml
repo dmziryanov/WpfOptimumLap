@@ -1,0 +1,135 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OptimumLap"
+    xmlns:mobile="clr-namespace:DevComponents.WPF.Mobile;assembly=DevComponents.WPF.Mobile">
+
+    <DataTemplate x:Key="ColorGalleryPopupButtonIconTemplate" DataType="{x:Type local:ColorGallery+NamedColor}">
+        <Grid>
+            <TextBlock Text="A" FontSize="24" Foreground="#5A5A5A" HorizontalAlignment="Center" FontFamily="Arial" />
+            <Rectangle Name="Rect" Margin="0,20,1,0" Width="24" Height="4">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="{Binding Color}" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+    </DataTemplate>
+
+    <Style x:Key="ColorGalleryCategoryStyle" TargetType="mobile:GalleryCategory">
+        <Setter Property="ItemsPanelOption" Value="HorizontalWrap" />
+        <Setter Property="MaxWidth" Value="470" />
+        <Setter Property="ItemsPadding" Value="10" />
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="Once" />
+        <Setter Property="Header" Value="{Binding DisplayName}" />
+        <Setter Property="ItemsSource" Value="{Binding}" />
+    </Style>
+
+    <Style x:Key="ColorGalleryItemContainerStyle" TargetType="mobile:GalleryItem">
+        <Setter Property="MinWidth" Value="40" />
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="DontAnimateWhenPressed" Value="True" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="{x:Type local:ColorGallery+NamedColor}">
+                    <Border Name="Bdr" BorderThickness="1" BorderBrush="{DynamicResource {x:Static mobile:MobileTheme.ControlBorderBrushKey}}">
+                        <Border.Background>
+                            <SolidColorBrush Color="{Binding Color}" />
+                        </Border.Background>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsHighlighted" Value="True">
+                <Setter Property="Padding" Value="3" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Padding" Value="3" />
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="BorderBrush" Value="#737373" />
+                <Setter Property="Padding" Value="3" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ColorGalleryAutomaticItemContainerStyle" TargetType="mobile:GalleryItem">
+        <Setter Property="DontAnimateWhenPressed" Value="True" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0,1,0,0" />
+        <Setter Property="BorderBrush" Value="{DynamicResource {x:Static mobile:MobileTheme.PopupBorderBrushKey}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="mobile:GalleryItem">
+                    <Border Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid Background="Transparent">
+                            <Rectangle Name="HighlightRect" Opacity="0" Fill="{DynamicResource {x:Static mobile:MobileTheme.HighlightBrushKey}}" />
+                            <Rectangle Name="SelectedRect" Opacity="0" Fill="{DynamicResource {x:Static mobile:MobileTheme.ActivatedBrushKey}}" 
+                                           StrokeThickness="0" Stroke="{DynamicResource {x:Static mobile:MobileTheme.ActivatedBorderBrushKey}}" />
+                            <Rectangle Name="PressedRect" Opacity="0" Fill="{DynamicResource {x:Static mobile:MobileTheme.ActivatingBrushKey}}" />
+                            <StackPanel Margin="15,0" Orientation="Horizontal" VerticalAlignment="Center">
+                                <Rectangle Name="Rect" Margin="0,0,10,0" Width="26" Height="26" StrokeThickness="1" Stroke="{TemplateBinding Foreground}">
+                                    <Rectangle.Fill>
+                                        <SolidColorBrush Color="{Binding Color}" />
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
+                            </StackPanel>
+                        </Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal" />
+                                <VisualState Name="Highlighted">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="HighlightRect" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        <DoubleAnimation Storyboard.TargetName="SelectedRect" Storyboard.TargetProperty="StrokeThickness" Duration="0" To="1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PressedRect" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="Opacity" Duration="0" To="0.4" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup Name="SelectionStates">
+                                <VisualState Name="Unselected" />
+                                <VisualState Name="Selected">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="SelectedRect" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static mobile:MobileTheme.ActivatingForegroundKey}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <local:ColorGalleryStyleSelector x:Key="ColorGalleryStyleSelector" 
+                                     CategoryStyle="{StaticResource ColorGalleryCategoryStyle}"
+                                     ColorItemStyle="{StaticResource ColorGalleryItemContainerStyle}" 
+                                     AutomaticColorStyle="{StaticResource ColorGalleryAutomaticItemContainerStyle}"/>
+
+    <Style x:Key="ColorGalleryStyle" TargetType="mobile:Gallery">
+        <Setter Property="Padding" Value="15" />
+        <Setter Property="ItemContainerStyleSelector" Value="{StaticResource ColorGalleryStyleSelector}" />
+        <Setter Property="ValuePath" Value="Color" />
+    </Style>
+    
+</ResourceDictionary>

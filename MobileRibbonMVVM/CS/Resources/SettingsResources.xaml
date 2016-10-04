@@ -1,0 +1,66 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewModel="clr-namespace:OptimumLap.ViewModel"
+    xmlns:mobile="clr-namespace:DevComponents.WPF.Mobile;assembly=DevComponents.WPF.Mobile"
+    xmlns:controls="clr-namespace:DevComponents.WPF.Controls;assembly=DevComponents.WPF.Controls">
+
+    <DataTemplate DataType="{x:Type viewModel:SettingsFlyoutItemViewModel}">
+        <mobile:SettingsFlyoutItem Header="{Binding Header}" Content="{Binding Content}" ClosesFlyout="{Binding ClosesFlyout}"
+                                   Command="{Binding Command}" CommandParameter="{Binding CommandParameter}">
+            <mobile:SettingsFlyoutItem.ContentTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" TextWrapping="Wrap" />
+                </DataTemplate>
+            </mobile:SettingsFlyoutItem.ContentTemplate>
+        </mobile:SettingsFlyoutItem>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:OptionSettingsFlyoutItemViewModel}">
+        <mobile:SettingsFlyoutItem Header="{Binding Header}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Margin="0,0,5,0" VerticalAlignment="Center" Text="{Binding ThemeColorText}" />
+                <controls:StaticMemberPicker Grid.Column="1" EmulationMode="ComboBox" 
+                                             ClassType="{x:Type mobile:MobileTheme}" Value="{Binding MobileTheme, Mode=TwoWay}"/>
+
+                <TextBlock Grid.Row="2" Margin="0,0,5,0" VerticalAlignment="Center" Text="{Binding SeedColorText}" />
+                <controls:StaticMemberPicker Grid.Row="2" Grid.Column="1" EmulationMode="ComboBox" 
+                                             ClassType="{x:Type Colors}" Value="{Binding MobileTheme.SeedColor, Mode=TwoWay}">
+                    <controls:StaticMemberPicker.ItemTemplate>
+                        <DataTemplate DataType="{x:Type controls:StaticMemberPickerValue}">
+                            <Grid>
+                                <Grid.Background>
+                                    <SolidColorBrush Color="{Binding Value}" />
+                                </Grid.Background>
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding DisplayName}" />
+                            </Grid>
+                        </DataTemplate>
+                    </controls:StaticMemberPicker.ItemTemplate>
+                </controls:StaticMemberPicker>
+
+                <TextBlock Grid.Row="4" Margin="0,0,5,0" VerticalAlignment="Center" Text="Chrome Style" />
+                <controls:EnumPicker Grid.Row="4" Grid.Column="1" MinWidth="125" HorizontalAlignment="Left" Value="{Binding ChromeStyle, Mode=TwoWay}" />
+                <CheckBox Grid.Row="6" Grid.ColumnSpan="2" VerticalContentAlignment="Center" Content="Hide Title" IsChecked="{Binding HideTitle, Mode=TwoWay}" />
+            </Grid>
+        </mobile:SettingsFlyoutItem>
+    </DataTemplate>
+    
+</ResourceDictionary>
+
+
+

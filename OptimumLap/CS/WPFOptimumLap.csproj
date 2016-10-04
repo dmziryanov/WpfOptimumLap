@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46C7B873-A614-477F-A976-2E99D672FCCD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobileRibbonMVVMSample</RootNamespace>
+    <AssemblyName>WPFOptimumLap</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MobileRibbonMVVMSample.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.8.0.20, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.WPF.Controls, Version=7.8.0.0, Culture=neutral, PublicKeyToken=65042117d0a83cbc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevComponents.WPF.Mobile, Version=7.8.0.0, Culture=neutral, PublicKeyToken=7c218705742a0d96, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevComponents.WpfRibbon, Version=7.9.0.17, Culture=neutral, PublicKeyToken=2037e151916410e7, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.0.0.0\lib\NET40\Microsoft.Practices.Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.0.0.0\lib\NET40\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.UnityExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.UnityExtensions.4.0.0.0\lib\NET40\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Data\ColorGallery.cs" />
+    <Compile Include="Data\FontGallery.cs" />
+    <Compile Include="Data\Images.cs" />
+    <Compile Include="Data\ListDescription.cs" />
+    <Compile Include="Infrastructure\BaseApplication.cs" />
+    <Compile Include="Infrastructure\Bootstrapper.cs" />
+    <Compile Include="Shell\IPresenter.cs" />
+    <Compile Include="Shell\IShell.cs" />
+    <Compile Include="Shell\IShellInteraction.cs" />
+    <Compile Include="Shell\IView.cs" />
+    <Compile Include="Shell\PresenterBase.cs" />
+    <Compile Include="Shell\ShellPresenter.cs" />
+    <Compile Include="Shell\ShellViewModel.cs" />
+    <Compile Include="Shell\MyRibbonWindow.xaml.cs">
+      <DependentUpon>MyRibbonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\ViewModelBase.cs" />
+    <Compile Include="ViewModel\Base\AlignmentsGalleryViewModel.cs" />
+    <Compile Include="ViewModel\Base\ListDescriptionGalleryViewModel.cs" />
+    <Compile Include="Data\ParagraphStyle.cs" />
+    <Compile Include="Data\ParagraphStyleGallery.cs" />
+    <Compile Include="Data\Strings.cs" />
+    <Compile Include="Resources\ParagraphStyleResources.xaml.cs">
+      <DependentUpon>ParagraphStyleResources.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\BackstageViewModel.cs" />
+    <Compile Include="ViewModel\Base\ButtonViewModel.cs" />
+    <Compile Include="ViewModel\Base\ComboBoxViewModel.cs" />
+    <Compile Include="ViewModel\Base\ControlBaseViewModels.cs" />
+    <Compile Include="ViewModel\Base\GalleryBarViewModel.cs" />
+    <Compile Include="ViewModel\Base\GroupBarViewModel.cs" />
+    <Compile Include="ViewModel\Base\ItemSelectorViewModel.cs" />
+    <Compile Include="ViewModel\Base\PopupButtonViewModel.cs" />
+    <Compile Include="ViewModel\Base\RibbonItemViewModel.cs" />
+    <Compile Include="ViewModel\Base\SelectorItemViewModel.cs" />
+    <Compile Include="ViewModel\Base\SeparatorViewModel.cs" />
+    <Compile Include="ViewModel\Base\SpeciaIndentsGalleryViewModel.cs" />
+    <Compile Include="ViewModel\HomeRibbonItem.FontFormattingGroup.cs" />
+    <Compile Include="ViewModel\HomeRibbonItem.ParagraphFormattingGroup.cs" />
+    <Compile Include="ViewModel\HomeRibbonItemViewModel.cs" />
+    <Compile Include="ViewModel\InsertRibbonItemViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\RibbonViewModel.cs" />
+    <Compile Include="ViewModel\SettingsFlyoutViewModel.cs" />
+    <Compile Include="ViewModel\ViewRibbonItemViewModel.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands.cs" />
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="FlowDocumentEditor.cs" />
+    <Page Include="Resources\BackstageResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ColorGalleryResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ParagraphStyleResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\RibbonResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\RibbonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\SettingsResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shell\MyRibbonWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\100PercentZoomIcon.png" />
+    <Resource Include="Images\AddSpaceIcon.png" />
+    <Resource Include="Images\AlignCenterIcon.png" />
+    <Resource Include="Images\AlignJustifyIcon.png" />
+    <Resource Include="Images\AlignLeftIcon.png" />
+    <Resource Include="Images\AlignRightIcon.png" />
+    <Resource Include="Images\BoldIcon.png" />
+    <Resource Include="Images\BulletedListIcon.png" />
+    <Resource Include="Images\ClearFormattingIcon.png" />
+    <Resource Include="Images\CommentIcon.png" />
+    <Resource Include="Images\EditModeIcon.png" />
+    <Resource Include="Images\EndnoteIcon.png" />
+    <Resource Include="Images\FontColorIcon.png" />
+    <Resource Include="Images\FontFormattingIcon.png" />
+    <Resource Include="Images\FootnoteIcon.png" />
+    <Resource Include="Images\HeadersFootersIcon.png" />
+    <Resource Include="Images\HighlightIcon.png" />
+    <Resource Include="Images\IndentLeftIcon.png" />
+    <Resource Include="Images\IndentRightIcon.png" />
+    <Resource Include="Images\ItalicIcon.png" />
+    <Resource Include="Images\LineSpacingIcon.png" />
+    <Resource Include="Images\LinkIcon.png" />
+    <Resource Include="Images\NumberedListIcon.png" />
+    <Resource Include="Images\PageNumberIcon.png" />
+    <Resource Include="Images\ParagraphFormattingIcon.png" />
+    <Resource Include="Images\PictureIcon.png" />
+    <Resource Include="Images\question.png" />
+    <Resource Include="Images\ReadModeIcon.png" />
+    <Resource Include="Images\redo.png" />
+    <Resource Include="Images\RemoveSpaceIcon.png" />
+    <Resource Include="Images\SearchIcon.png" />
+    <Resource Include="Images\ShapesIcon.png" />
+    <Resource Include="Images\smiley.png" />
+    <Resource Include="Images\SpecialIndentIcon.png" />
+    <Resource Include="Images\StrikethroughIcon.png" />
+    <Resource Include="Images\StylesIcon.png" />
+    <Resource Include="Images\SubscriptIcon.png" />
+    <Resource Include="Images\SuperscriptIcon.png" />
+    <Resource Include="Images\TableIcon.png" />
+    <Resource Include="Images\TextBoxIcon.png" />
+    <Resource Include="Images\UnderlineIcon.png" />
+    <Resource Include="Images\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BulletArrow.png" />
+    <Resource Include="Images\BulletCheck.png" />
+    <Resource Include="Images\BulletDiamonds.png" />
+    <Resource Include="Images\BulletNone.png" />
+    <Resource Include="Images\BulletOpen.png" />
+    <Resource Include="Images\BulletSolid.png" />
+    <Resource Include="Images\BulletSquare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\JustifyIcon.png" />
+    <Resource Include="Images\ListNone.png" />
+    <Resource Include="Images\NumberedListArabicParenth.png" />
+    <Resource Include="Images\NumberedListArabicPeriod.png" />
+    <Resource Include="Images\NumberedListLetterCapitalPeriod.png" />
+    <Resource Include="Images\NumberedListLetterLowerParenth.png" />
+    <Resource Include="Images\NumberedListLetterLowerPeriod.png" />
+    <Resource Include="Images\NumberedListLetterUpperPeriod.png" />
+    <Resource Include="Images\NumberedListRomanCapitalPeriod.png" />
+    <Resource Include="Images\NumberedListRomanLowerPeriod.png" />
+    <Resource Include="Images\NumberedListRomanUpperPeriod.png" />
+    <Resource Include="Images\ShowHideIcon.png" />
+    <Resource Include="Images\ZoomIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\carOnScale_32.png" />
+    <Resource Include="Images\car_16.png" />
+    <Resource Include="Images\car_add_48.png" />
+    <Resource Include="Images\car_downforce_32.png" />
+    <Resource Include="Images\car_download_48.png" />
+    <Resource Include="Images\car_drag_32.png" />
+    <Resource Include="Images\car_export_48.png" />
+    <Resource Include="Images\car_invalid_16.png" />
+    <Resource Include="Images\car_upload_48.png" />
+    <Resource Include="Images\car_valid_16.png" />
+    <Resource Include="Images\car_weightDistrib_32.png" />
+    <Resource Include="Images\chart_gear_48.png" />
+    <Resource Include="Images\chart_latg_48.png" />
+    <Resource Include="Images\chart_line_16.png" />
+    <Resource Include="Images\chart_line_48.png" />
+    <Resource Include="Images\chart_rpm_48.png" />
+    <Resource Include="Images\chart_velocity_48.png" />
+    <Resource Include="Images\chart_xchannel_24.png" />
+    <Resource Include="Images\chart_ychannel_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\3dchart_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\color_trackmap_16.png" />
+    <Resource Include="Images\color_trackmap_add_48.png" />
+    <Resource Include="Images\color_trackmap_channel_32.png" />
+    <Resource Include="Images\color_trackmap_gear_48.png" />
+    <Resource Include="Images\color_trackmap_latg_48.png" />
+    <Resource Include="Images\color_trackmap_rpm_48.png" />
+    <Resource Include="Images\color_trackmap_velocity_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\comments_24.png" />
+    <Resource Include="Images\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\enginedata_24.png" />
+    <Resource Include="Images\enginedata_addrange_24.png" />
+    <Resource Include="Images\enginedata_add_24.png" />
+    <Resource Include="Images\enginedata_remove_24.png" />
+    <Resource Include="Images\export_results_48.png" />
+    <Resource Include="Images\folder_16.png" />
+    <Resource Include="Images\folder_2d_kpi_16.png" />
+    <Resource Include="Images\folder_3dchart_16.png" />
+    <Resource Include="Images\folder_analysis_16.png" />
+    <Resource Include="Images\folder_car_16.png" />
+    <Resource Include="Images\folder_chart_16.png" />
+    <Resource Include="Images\folder_colortrackmap_16.png" />
+    <Resource Include="Images\folder_lapresult_16.png" />
+    <Resource Include="Images\folder_table_16.png" />
+    <Resource Include="Images\folder_track_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\front_area_32.png" />
+    <Resource Include="Images\gearbox_24.png" />
+    <Resource Include="Images\gearbox_add_24.png" />
+    <Resource Include="Images\gearbox_remove_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\OptimumGProject_16x16.png" />
+    <Resource Include="Images\OptimumGProject_24x24.png" />
+    <Resource Include="Images\OptimumGProject_64x64.png" />
+    <Resource Include="Images\OptimumG_CVT.png" />
+    <Resource Include="Images\OptimumG_logo_color250.png" />
+    <Resource Include="Images\OptimumG_logo_color500.png" />
+    <Resource Include="Images\OptimumG_VDS_logo_color200.png" />
+    <Resource Include="Images\OptimumG_VDS_logo_color250.png" />
+    <Resource Include="Images\OptimumG_WrongInputs.png" />
+    <Resource Include="Images\OptimumLap.png" />
+    <Resource Include="Images\OptimumLapDocument_16.png" />
+    <Resource Include="Images\OptimumLap_16x16.png" />
+    <Resource Include="Images\OptimumLap_256x256.ico" />
+    <Resource Include="Images\OptimumLap_FontSize_36.png" />
+    <Resource Include="Images\OptimumLap_FontSize_48.png" />
+    <Resource Include="Images\OptL Document_64.png" />
+    <Resource Include="Images\OptL Project_64.png" />
+    <Resource Include="Images\OptL_Document_16.png" />
+    <Resource Include="Images\opt_lap_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\realvista_general_clipboard_48.png" />
+    <Resource Include="Images\realvista_general_close_16.png" />
+    <Resource Include="Images\realvista_general_diskette_16.png" />
+    <Resource Include="Images\realvista_general_diskette_48.png" />
+    <Resource Include="Images\realvista_general_gear_16.png" />
+    <Resource Include="Images\realvista_general_help_16.png" />
+    <Resource Include="Images\realvista_general_info_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Apex.png" />
+    <Resource Include="Images\Aspect.png" />
+    <Resource Include="Images\Bold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ChangeStyles32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Civic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Component.png" />
+    <Resource Include="Images\Concourse.png" />
+    <Resource Include="Images\ContactUs2.png" />
+    <Resource Include="Images\Copy.png" />
+    <Resource Include="Images\Currency.png" />
+    <Resource Include="Images\Cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Deluxe.png" />
+    <Resource Include="Images\DocTemplateBlogPost.png" />
+    <Resource Include="Images\DocTemplateMy.png" />
+    <Resource Include="Images\DocTemplateNew.png" />
+    <Resource Include="Images\DocTemplateNewBasedOn.png" />
+    <Resource Include="Images\DocTemplateRecent.png" />
+    <Resource Include="Images\DocTemplateSamples.png" />
+    <Resource Include="Images\Document.png" />
+    <Resource Include="Images\Document32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Equity.png" />
+    <Resource Include="Images\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Find.png" />
+    <Resource Include="Images\FindNext.png" />
+    <Resource Include="Images\Flow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FolderClosed32.png" />
+    <Resource Include="Images\FolderOpen32.png" />
+    <Resource Include="Images\FontColor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FontColorPart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FontSizeDec.png" />
+    <Resource Include="Images\FontSizeInc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Foundry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Globe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Help.png" />
+    <Resource Include="Images\Help64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Italic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Median.png" />
+    <Resource Include="Images\Metro.png" />
+    <Resource Include="Images\MyFiles16.png" />
+    <Resource Include="Images\NewDocument.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Office.png" />
+    <Resource Include="Images\OpenExistingPlace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ReportBugs_16.png" />
+    <Resource Include="Images\Restrictions16.png" />
+    <Resource Include="Images\run_lapsim_48.png" />
+    <Resource Include="Images\run_lapsim_batch_48.png" />
+    <Resource Include="Images\Save.png" />
+    <Resource Include="Images\Save32.png" />
+    <Resource Include="Images\SaveAs16.png" />
+    <Resource Include="Images\SaveAs32.png" />
+    <Resource Include="Images\scalingfactor_24.png" />
+    <Resource Include="Images\SchemeBlack.png" />
+    <Resource Include="Images\SchemeBlack16.png" />
+    <Resource Include="Images\SchemeBlue.png" />
+    <Resource Include="Images\SchemeBlue16.png" />
+    <Resource Include="Images\SchemeBlue2013.png" />
+    <Resource Include="Images\SchemeBlue201316.png" />
+    <Resource Include="Images\SchemeCustom.png" />
+    <Resource Include="Images\SchemeCustom16.png" />
+    <Resource Include="Images\SchemeSilver.png" />
+    <Resource Include="Images\SchemeSilver16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Select.png" />
+    <Resource Include="Images\SelectResultstoChart.png" />
+    <Resource Include="Images\seminar.png" />
+    <Resource Include="Images\SeminarAd2_OptL.png" />
+    <Resource Include="Images\SeminarAd_OptL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Solistice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Splashscreen.png" />
+    <Resource Include="Images\Strike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Structure16.png" />
+    <Resource Include="Images\StyleSet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Subscript.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TextHighlight.png" />
+    <Resource Include="Images\time_channel_16.png" />
+    <Resource Include="Images\trackmap_add_black_48.png" />
+    <Resource Include="Images\trackmap_create_from_data_48.png" />
+    <Resource Include="Images\trackmap_export_black_48.png" />
+    <Resource Include="Images\trackmap_import_black_48.png" />
+    <Resource Include="Images\track_16.png" />
+    <Resource Include="Images\track_24.png" />
+    <Resource Include="Images\track_close_24.png" />
+    <Resource Include="Images\track_config_24.png" />
+    <Resource Include="Images\track_download_48.png" />
+    <Resource Include="Images\track_edit_24.png" />
+    <Resource Include="Images\track_elevation_24.png" />
+    <Resource Include="Images\track_elevation_add_24.png" />
+    <Resource Include="Images\track_elevation_remove_24.png" />
+    <Resource Include="Images\track_flip_horiz_24.png" />
+    <Resource Include="Images\track_flip_vert_24.png" />
+    <Resource Include="Images\track_info_24.png" />
+    <Resource Include="Images\track_invalid_16.png" />
+    <Resource Include="Images\track_sector_24.png" />
+    <Resource Include="Images\track_sector_add_24.png" />
+    <Resource Include="Images\track_sector_auto_24.png" />
+    <Resource Include="Images\track_sector_remove_24.png" />
+    <Resource Include="Images\track_upload_48.png" />
+    <Resource Include="Images\track_valid_16.png" />
+    <Resource Include="Images\Trek.png" />
+    <Resource Include="Images\tutorial.png" />
+    <Resource Include="Images\tyre_16.png" />
+    <Resource Include="Images\Underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Unpinned.png" />
+    <Resource Include="Images\Urban.png" />
+    <Resource Include="Images\VehicleCopy.png" />
+    <Resource Include="Images\vehicle_setup_24.png" />
+    <Resource Include="Images\Verve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Splashscreen.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

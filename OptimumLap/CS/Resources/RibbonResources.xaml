@@ -1,0 +1,201 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MobileRibbonMVVMSample"
+    xmlns:mobile="clr-namespace:DevComponents.WPF.Mobile;assembly=DevComponents.WPF.Mobile"
+    xmlns:viewModel="clr-namespace:MobileRibbonMVVMSample.ViewModel"
+    xmlns:controls="clr-namespace:DevComponents.WPF.Controls;assembly=DevComponents.WPF.Controls"
+    xmlns:wpfRibbon="clr-namespace:DevComponents.WpfRibbon;assembly=DevComponents.WpfRibbon"
+    xmlns:WinTheme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Luna">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ColorGalleryResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate DataType="{x:Type viewModel:SeparatorViewModel}">
+        <Separator />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:ButtonViewModel}">
+        <wpfRibbon:ButtonDropDown Header="{Binding Content}" 
+                             Command="{Binding Command}" CommandParameter="{Binding CommandParameter}"
+                             ImageSource="{Binding ImageSource}" ToolTip="{Binding ToolTip}" />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:RibbonItemViewModel}">
+        <wpfRibbon:RibbonTab Header="{Binding Header}" IsSelected="{Binding IsSelected}">
+            <wpfRibbon:RibbonBarPanel Height="89">
+                <wpfRibbon:RibbonBar ItemsSource="{Binding BarView}">
+
+                </wpfRibbon:RibbonBar>
+            </wpfRibbon:RibbonBarPanel>
+        </wpfRibbon:RibbonTab> 
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:BarViewModel}">
+    <wpfRibbon:RibbonBarPanel Height="89">
+        <wpfRibbon:RibbonBar ItemsSource="{Binding Items}">
+
+        </wpfRibbon:RibbonBar>
+    </wpfRibbon:RibbonBarPanel>
+    </DataTemplate>
+
+
+    <DataTemplate DataType="{x:Type viewModel:ToggleButtonViewModel}">
+        <mobile:RibbonToggleButton DisplayOption="{Binding DisplayOption}" Content="{Binding Content}" 
+                                   ImageSource="{Binding ImageSource}" ToolTip="{Binding ToolTip}"
+                                   Command="{Binding Command}" CommandParameter="{Binding CommandParameter}" IsChecked="{Binding IsChecked, Mode=TwoWay}"
+                                   mobile:RibbonItem.OverflowIndex="{Binding OverflowIndex}" mobile:GroupBar.SharedOverflowRow="{Binding SharedOverflowRow}" />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:RadioButtonViewModel}">
+        <mobile:RibbonRadioButton DisplayOption="{Binding DisplayOption}" Content="{Binding Content}" 
+                                  ImageSource="{Binding ImageSource}" ToolTip="{Binding ToolTip}"                                  
+                                  Command="{Binding Command}" CommandParameter="{Binding CommandParameter}" IsChecked="{Binding IsChecked, Mode=TwoWay}"
+                                  mobile:RibbonItem.OverflowIndex="{Binding OverflowIndex}" mobile:GroupBar.SharedOverflowRow="{Binding SharedOverflowRow}" />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:CheckBoxViewModel}">
+        <mobile:RibbonCheckBox Content="{Binding Content}" ToolTip="{Binding ToolTip}"                                  
+                               Command="{Binding Command}" CommandParameter="{Binding CommandParameter}" IsChecked="{Binding IsChecked, Mode=TwoWay}"
+                               mobile:RibbonItem.OverflowIndex="{Binding OverflowIndex}" mobile:GroupBar.SharedOverflowRow="{Binding SharedOverflowRow}" />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:ComboBoxViewModel}">
+        <mobile:RibbonComboBox ItemsSource="{Binding Items}" IsEditable="{Binding IsEditable}" AutoCompleteOption="{Binding AutoCompleteOption}"
+                               Header="{Binding Header}" Text="{Binding Text, Mode=TwoWay}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+                               ValuePath="{Binding ValuePath}" Value="{Binding Value, Mode=TwoWay}" 
+                               mobile:RibbonItem.OverflowIndex="{Binding OverflowIndex}" mobile:GroupBar.SharedOverflowRow="{Binding SharedOverflowRow}" />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:FontSizeComboBoxViewModel}">
+        <mobile:RibbonComboBox SelectionBoxWidth="40" MinDropDownWidth="100" MaxDropDownHeight="410" Margin="0,8,8,8" 
+                               OverflowingMargin="0,0,8,0" IsEditable="{Binding IsEditable}" ItemsSource="{Binding Items}" 
+                               AutoCompleteOption="{Binding AutoCompleteOption}" ValuePath="{Binding ValuePath}" Value="{Binding Value, Mode=TwoWay}" 
+                               mobile:RibbonItem.OverflowIndex="{Binding OverflowIndex}" mobile:GroupBar.SharedOverflowRow="{Binding SharedOverflowRow}" />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:FontComboBoxViewModel}">
+        <mobile:RibbonComboBox SelectionBoxWidth="90" MaxDropDownHeight="620" Margin="8,8,-1,8" OverflowingMargin="8,0,0,0"
+                               ItemsSource="{Binding Items}" IsEditable="{Binding IsEditable}" AutoCompleteOption="{Binding AutoCompleteOption}"
+                               ValuePath="{Binding ValuePath}" Value="{Binding Value, Mode=TwoWay}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}"   
+                               mobile:RibbonItem.OverflowIndex="{Binding OverflowIndex}" mobile:GroupBar.SharedOverflowRow="{Binding SharedOverflowRow}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type local:Font}">
+                    <TextBlock Text="{Binding Name}" FontFamily="{Binding Name}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="mobile:GalleryCategory">
+                    <Setter Property="ItemsSource" Value="{Binding}" />
+                    <Setter Property="Header" Value="{Binding Name}" />
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+        </mobile:RibbonComboBox>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:AlignmentViewModel}">
+        <mobile:RibbonRadioButton ToolTip="{Binding Content}" Content="{x:Null}" ImageSource="{Binding ImageSource}" IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:SpecialIndentViewModel}">
+        <mobile:RibbonRadioButton ToolTip="{Binding Content}" Content="{Binding Content}" 
+                                  ImageSource="{Binding ImageSource}" IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:ListGalleryPopupButtonViewModel}">
+        <mobile:RibbonPopupButton MaximumPopupWidth="240" MaximumPopupHeight="10000" PopupPadding="15" ToolTip="{Binding ToolTip}" 
+                                  ImageSource="{Binding ImageSource}" Header="{Binding Content}" PopupTitle="{Binding PopupTitle}"
+                                  mobile:RibbonItem.OverflowIndex="{Binding OverflowIndex}" mobile:GroupBar.SharedOverflowRow="{Binding SharedOverflowRow}">
+            <mobile:Gallery ItemsPanelOption="HorizontalWrap" ItemsSource="{Binding GalleryItems}" 
+                            ValuePath="{Binding Gallery.ValuePath}" Value="{Binding Gallery.Value, Mode=TwoWay}" 
+                            SelectedItem="{Binding Gallery.SelectedItem, Mode=TwoWay}">
+                <mobile:Gallery.ItemContainerStyle>
+                    <Style TargetType="mobile:GalleryItem">
+                        <Setter Property="Margin" Value="2" />
+                        <Setter Property="Padding" Value="4" />
+                        <Setter Property="Content" Value="{x:Null}" />
+                        <Setter Property="ImageSource" Value="{Binding ImageSource}" />
+                    </Style>
+                </mobile:Gallery.ItemContainerStyle>
+            </mobile:Gallery>
+        </mobile:RibbonPopupButton>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:ColorGalleryPopupButtonViewModel}">
+        <mobile:RibbonPopupButton IsSplitButton="True" ToolTip="{Binding ToolTip}" 
+                                  Header="{Binding Content}" PopupTitle="{Binding PopupTitle}"
+                                  Command="{Binding Command}" CommandParameter="{Binding CommandParameter}"
+                                  Icon="{Binding SelectedColor}" IconTemplate="{StaticResource ColorGalleryPopupButtonIconTemplate}"
+                                  mobile:RibbonItem.OverflowIndex="{Binding OverflowIndex}" mobile:GroupBar.SharedOverflowRow="{Binding SharedOverflowRow}">
+            <mobile:Gallery Name="ColorGallery" ItemsSource="{Binding ColorGallery}" 
+                            ItemContainerStyleSelector="{StaticResource ColorGalleryStyleSelector}"
+                            SelectedItem="{Binding SelectedColor, Mode=TwoWay}" />
+        </mobile:RibbonPopupButton>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:ParagrahpStyleGalleryBarViewModel}">
+        <mobile:GalleryBar PopupTitle="{Binding PopupTitle}" ToolTip="{Binding ToolTip}" ImageSource="{Binding ImageSource}" 
+                           ItemsSource="{Binding Items}" QuickAccessItemsSource="{Binding QuickAccessItems}" 
+                           SelectedItem="{Binding SelectedItem, Mode=TwoWay}" QuickAccessOverflowIndexes="{Binding QuickAccessOverflowIndexes}">
+            <mobile:GalleryBar.ItemTemplate>
+                <DataTemplate DataType="{x:Type local:ParagraphStyle}">
+                    <Border Height="40" MinWidth="240" Margin="16,0" Padding="7,0" Background="White">
+                        <TextBlock VerticalAlignment="Center" Text="{Binding StyleName}" Foreground="{Binding Foreground}" 
+                                   FontSize="{Binding FontSize}" FontFamily="{Binding FontFamily}" 
+                                   FontWeight="{Binding FontWeight}" FontStyle="{Binding FontStyle}"/>
+                    </Border>
+                </DataTemplate>
+            </mobile:GalleryBar.ItemTemplate>
+            <mobile:GalleryBar.QuickAccessItemTemplate>
+                <DataTemplate DataType="{x:Type local:ParagraphStyle}">
+                    <Border Height="28" MinWidth="134" Margin="12,0" Padding="7,0" Background="White">
+                        <TextBlock VerticalAlignment="Center" Text="{Binding StyleName}" Foreground="{Binding Foreground}" 
+                                   FontSize="{Binding FontSize}" FontFamily="{Binding FontFamily}" 
+                                   FontWeight="{Binding FontWeight}" FontStyle="{Binding FontStyle}"/>
+                    </Border>
+                </DataTemplate>
+            </mobile:GalleryBar.QuickAccessItemTemplate>
+        </mobile:GalleryBar>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:PopupButtonViewModel}">
+        <mobile:RibbonPopupButton Header="{Binding Content}" MaximumPopupWidth="{Binding MaximumPopupWidth}" 
+                                  Command="{Binding Command}" CommandParameter="{Binding CommandParameter}" 
+                                  PopupTitle="{Binding PopupTitle}" ItemsDisplayOption="{Binding ItemsDisplayOption}" ItemsPanelOption="{Binding ItemsPanelOption}"
+                                  ImageSource="{Binding ImageSource}" ToolTipService.ToolTip="{Binding ToolTip}" ItemsSource="{Binding Items}"
+                                  mobile:RibbonItem.OverflowIndex="{Binding OverflowIndex}" mobile:GroupBar.SharedOverflowRow="{Binding SharedOverflowRow}" />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:GroupBarViewModel}">
+        <wpfRibbon:RibbonBarPanel Height="89">
+            <wpfRibbon:CrumbBar Height="89" ItemsSource="{Binding Items}" >
+            </wpfRibbon:CrumbBar>
+            </wpfRibbon:RibbonBarPanel>
+    </DataTemplate>
+
+    <Style x:Key="RibbonItemStyle" TargetType="mobile:RibbonItem">
+        <Setter Property="Header" Value="{Binding Header}" />
+        <Setter Property="ItemsSource" Value="{Binding Items}" />
+        <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+    </Style>
+
+  <!--  <DataTemplate x:Key="RibbonTitleTemplate">
+        <Grid>
+            
+            <Popup Name="Popup" StaysOpen="False" PopupAnimation="Fade" Placement="Relative" PlacementTarget="{Binding ElementName=ToggleButton}" 
+                   IsOpen="{Binding ElementName=ToggleButton, Path=IsChecked, Mode=TwoWay}"
+                   controls:PopupBehavior.CloseOnEnterKey="True">
+                <Border Background="White" MinWidth="{Binding ElementName=ToggleButton, Path=ActualWidth}">
+                    <controls:AdvTextBox FontSize="14" Padding="8,3" UpdateOnEnter="True"
+                                         BorderBrush="{DynamicResource {x:Static mobile:MobileTheme.ControlBorderBrushKey}}"
+                                         SelectionBrush="#505050" SelectAllOption="OnFocused" AttemptFocusOnLoad="True"                                                                                  
+                                         Text="{Binding RelativeSource={RelativeSource AncestorType=mobile:MobileWindow}, Path=Title, Mode=TwoWay}" />
+                </Border>
+            </Popup>
+        </Grid>
+    </DataTemplate>-->
+
+</ResourceDictionary>
+
+
+
